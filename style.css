@@ -1,11 +1,33 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: "Amatic SC", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 
+body {
+    background-color: #E9ECEF;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #main-heading {
-    
+    text-align: center;
+    font-size: 4rem;
+    line-height: 6rem;
+    color: #212529;
+}
+
+.container {
+    background-color: #DEE2E6;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 20px;
+    width: 80%;
+    height: 80vh;
 }
