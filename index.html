@@ -11,20 +11,28 @@
 </head>
 <body>
     <header>
-        <h1 id="main-heading">WEATHER APP</h1>
+        <h1 id="main-heading">WEATHER</h1>
     </header>
 
     <main>
         <div class="container">
             <div class="search-container">
-                <form>
-                    <input type="text" id="city-name" placeholder="Enter City">
-                    <button class="search-button">Search</button>
-                </form>
+                <div class="weather-logo">Weather</div>
+                <input type="text" id="city-name" placeholder="Enter City">
+                <button class="search-button">Search</button>
             </div>
 
             <div class="data-container">
-                
+                <h1 id="data-heading">TODAY OVERVIEW</h1>
+                <div class="weather-data">
+                    <div class="temperature"></div>
+                    <div class="wind-speed"></div>
+                    <div class="pressure"></div>
+                    <div class="sunrise"></div>
+                    <div class="sunset"></div>
+                    <div class="humidity"></div>
+                    <div class="visibility"></div>
+                </div>
             </div>
         </div>
     </main>
