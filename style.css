@@ -31,7 +31,6 @@ button {
     text-align: center;
     font-size: 70px;
     line-height: 100px;
-    color: #212529;
 }
 
 .container {
@@ -119,13 +118,15 @@ button {
 
 .temperature-data #sky {
     font-size: 2rem;
+    color: #495057;
 }
 
 .location-data, .date-data {
+    color: #343A40;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
