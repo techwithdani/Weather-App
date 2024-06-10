@@ -95,12 +95,3 @@ button {
     font-size: 3rem;
     text-align: center;
 }
-
-.data-container {
-    grid-row: 3/5;
-    grid-column: 1/5;
-}
-
-.temperature-data {
-
-}
