@@ -130,3 +130,25 @@ button {
     gap: 0.5rem;
     font-size: 1.5rem;
 }
+
+.wind-speed {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    background-color: #ADB5BD;
+    margin: 2.5rem;
+    border-radius: 20px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.wind-data {
+    font-size: 1.5rem;
+}
+
+.wind-data #wind {
+    font-size: 2.5rem;
+    color: #343A40;
+}
