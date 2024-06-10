@@ -22,6 +22,11 @@ input {
     outline: none;
 }
 
+button {
+    border: none;
+    outline: none;
+}
+
 #main-heading {
     text-align: center;
     font-size: 70px;
@@ -53,8 +58,8 @@ input {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 2rem;
-    width: 9rem;
+    font-size: 1.5rem;
+    width: 8rem;
     height: 3rem;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
@@ -62,11 +67,26 @@ input {
 }
 
 #city-name {
-    width: 60vw;
+    width: 62.5vw;
     height: 2rem;
-    padding: 5px;
     font-size: 1.8rem;
+    padding: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    background-color: #F8F9FA;
+}
+
+.search-button {
+    width: 6rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #CED4DA;
 }
 
 .data-container {
