@@ -24,8 +24,8 @@ input {
 
 #main-heading {
     text-align: center;
-    font-size: 4rem;
-    line-height: 6rem;
+    font-size: 70px;
+    line-height: 100px;
     color: #212529;
 }
 
@@ -44,27 +44,28 @@ input {
     grid-row: 1/2;
     grid-column: 1/5;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
 }
 
 .weather-logo {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 30px;
-    width: 150px;
-    height: 40px;
+    font-size: 2rem;
+    width: 9rem;
+    height: 3rem;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
     background-color: #CED4DA;
 }
 
 #city-name {
-    width: 50vw;
-    height: 30px;
+    width: 60vw;
+    height: 2rem;
     padding: 5px;
-    font-size: 25px;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
