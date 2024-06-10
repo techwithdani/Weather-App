@@ -31,6 +31,7 @@ button {
     text-align: center;
     font-size: 70px;
     line-height: 100px;
+    color: #212529;
 }
 
 .container {
@@ -63,6 +64,7 @@ button {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
     background-color: #CED4DA;
+    color: #212529;
 }
 
 #city-name {
@@ -73,6 +75,7 @@ button {
     cursor: pointer;
     border-radius: 5px;
     background-color: #F8F9FA;
+    color: #343A40;
 }
 
 .search-button {
@@ -86,6 +89,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     background-color: #CED4DA;
+    color: #6C757D;
 }
 
 #data-heading {
@@ -178,5 +182,5 @@ button {
 
 .wind-data #wind, #pressure, #sunrise, #sunset, #humidity, #visibility{
     font-size: 2.5rem;
-    color: #212529
+    color: #212529;
 }
