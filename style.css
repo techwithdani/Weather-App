@@ -89,14 +89,18 @@ button {
     background-color: #CED4DA;
 }
 
-.data-container {
-    grid-row: 3/5;
-    grid-column: 1/5;
-}
-
 #data-heading {
     grid-row: 2/3;
     grid-column: 1/5;
     font-size: 3rem;
     text-align: center;
+}
+
+.data-container {
+    grid-row: 3/5;
+    grid-column: 1/5;
+}
+
+.temperature-data {
+
 }
