@@ -93,9 +93,12 @@ button {
     grid-column: 1/5;
     font-size: 3rem;
     text-align: center;
+    line-height: 150px;
+    color: #495057;
 }
 
-.weather-container {
+.weather-container, .wind-speed-container, .pressure-container,
+.sunrise-container, .sunset-container, .humidity-container, .visibility-container{
     grid-row: 3/5;
     grid-column: 1/2;
     background-color: #ADB5BD;
@@ -114,15 +117,16 @@ button {
 
 .temperature-data #temp {
     font-size: 2.5rem;
+    color: #212529;
 }
 
 .temperature-data #sky {
     font-size: 2rem;
-    color: #495057;
+    color: #343A40;
 }
 
 .location-data, .date-data {
-    color: #343A40;
+    color: #6C757D;
     text-align: center;
     display: flex;
     align-items: center;
@@ -131,24 +135,48 @@ button {
     font-size: 1.5rem;
 }
 
-.wind-speed {
+.wind-speed-container{
     grid-row: 3/4;
     grid-column: 2/3;
-    background-color: #ADB5BD;
-    margin: 2.5rem;
-    border-radius: 20px;
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
 }
 
-.wind-data {
-    font-size: 1.5rem;
+.pressure-container {
+    grid-row: 4/5;
+    grid-column: 2/3;
+    gap: 1rem;
 }
 
-.wind-data #wind {
+.sunrise-container {
+    grid-row: 3/4;
+    grid-column: 3/4;
+    gap: 1rem;
+}
+
+.sunset-container {
+    grid-row: 3/4;
+    grid-column: 4/5;
+    gap: 1rem;
+}
+
+.humidity-container {
+    grid-row: 4/5;
+    grid-column: 3/4;
+    gap: 1rem;
+}
+
+.visibility-container {
+    grid-row: 4/5;
+    grid-column: 4/5;
+    gap: 1rem;
+}
+
+.wind-data, .pressure-data, .sunrise-data, .sunset-data, .humidity-data, .visibility-data{
+    font-size: 1.5rem;
+    color: #6C757D;
+}
+
+.wind-data #wind, #pressure, #sunrise, #sunset, #humidity, #visibility{
     font-size: 2.5rem;
-    color: #343A40;
+    color: #212529
 }
