@@ -50,7 +50,7 @@ button {
     grid-column: 1/5;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .weather-logo {
@@ -90,6 +90,13 @@ button {
 }
 
 .data-container {
+    grid-row: 3/5;
+    grid-column: 1/5;
+}
+
+#data-heading {
     grid-row: 2/3;
-    grid-column: 1/2;
+    grid-column: 1/5;
+    font-size: 3rem;
+    text-align: center;
 }
