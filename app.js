@@ -1,6 +1,9 @@
 let Url = "https://api.openweathermap.org/data/2.5/weather?";
+
+// replace 'key' with your actual API key
 const apiKey = "key";
 
+// Selecting DOM elements
 const cityName = document.querySelector("#city-name");
 const searchButton = document.querySelector("#search-button");
 const temperature = document.querySelector("#temp");
@@ -14,6 +17,7 @@ const sunset = document.querySelector("#sunset");
 const humidity = document.querySelector("#humidity");
 const visibility = document.querySelector("#visibility");
 
+// Function to fetch and display weather data
 const fetchCurrentWeatherData = async () => {
     try {
         const apiUrl = `${Url}q=${cityName.value}&appid=${apiKey}`;
@@ -30,6 +34,7 @@ const fetchCurrentWeatherData = async () => {
 
         const weatherData = await response.json();
 
+        // Updating DOM elements with weather data
         temperature.innerHTML = await convertRoundDegree(weatherData.main.temp - 273.15);
         sky.innerHTML = await weatherData.weather[0].description;
         currentLocation.innerHTML = await weatherData.name;
@@ -47,14 +52,17 @@ const fetchCurrentWeatherData = async () => {
     }
 };
 
+// Function to convert meters to kilometers
 const convertMetersToKm = async (meters) => {
     return `${meters / 1000} KM`;
 };
 
+// Function to convert meters per second to kilometers per hour
 const convertMpsToKmh = async (mps) => {
     return `${Math.round(mps * 3.6)} KM/H`;
 };
 
+// Function to convert and round temperature
 const convertRoundDegree = async (degree) => {
     const roundedDegree = Math.round(degree * 10) / 10;
     if (roundedDegree % 1 === 0) {
@@ -64,6 +72,7 @@ const convertRoundDegree = async (degree) => {
     }
 };
 
+// Function to format date and time
 const changeDateFormat = async (unixTimeStamp, type) => {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const daysOfWeekShortened = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -98,13 +107,10 @@ const changeDateFormat = async (unixTimeStamp, type) => {
     return daysOfWeek[dayOfWeekIndex];
   } else if (type === "hour") {
     return `${hours}:${minutes}`;
-  } else if (type === "short") {
-    return formattedDateShortened;
   } else {
     return formattedDate;
   }
 };
 
-searchButton.addEventListener("click", () => {
-    fetchCurrentWeatherData();
-});
+// Event listener for search button click
+searchButton.addEventListener("click", fetchCurrentWeatherData);
