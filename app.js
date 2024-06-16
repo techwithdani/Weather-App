@@ -103,4 +103,8 @@ const changeDateFormat = async (unixTimeStamp, type) => {
   } else {
     return formattedDate;
   }
-}
+};
+
+searchButton.addEventListener("click", () => {
+    fetchCurrentWeatherData();
+});
