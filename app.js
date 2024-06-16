@@ -41,8 +41,3 @@ const fetchCurrentWeatherData = async() => {
     humidity.innerHTML = await weatherData.main.humidity;
     visibility.innerHTML = await weatherData.visibility;
 }
-
-searchButton.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    fetchCurrentWeatherData();
-})
