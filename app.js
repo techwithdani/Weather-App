@@ -76,9 +76,6 @@ const convertRoundDegree = async (degree) => {
 // Function to format date and time
 const changeDateFormat = async (unixTimeStamp, type) => {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    const daysOfWeekShortened = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    const monthsOfYearShortened = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const monthsOfYear = [
     "January",
     "February",
@@ -102,7 +99,6 @@ const changeDateFormat = async (unixTimeStamp, type) => {
   const minutes = date.getMinutes().toString().padStart(2, "0");
 
   const formattedDate = `${dayOfMonth} ${monthsOfYear[monthIndex]} ${daysOfWeek[dayOfWeekIndex]}`;
-  const formattedDateShortened = `${dayOfMonth} ${monthsOfYearShortened[monthIndex]} ${daysOfWeekShortened[dayOfWeekIndex]}`;
 
   if (type === "day") {
     return daysOfWeek[dayOfWeekIndex];
