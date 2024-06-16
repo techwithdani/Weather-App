@@ -15,31 +15,36 @@ const humidity = document.querySelector("#humidity");
 const visibility = document.querySelector("#visibility");
 
 const fetchCurrentWeatherData = async () => {
-    const apiUrl = `${Url}q=${cityName.value}&appid=${apiKey}`;
+    try {
+        const apiUrl = `${Url}q=${cityName.value}&appid=${apiKey}`;
 
-    const response = await fetch(apiUrl);
+        const response = await fetch(apiUrl);
 
-    if (!response.ok) {
-        if (response.status === 404) {
-            alert(new Error("Sorry, we couldn't find data. Please check your spelling and try again."));
-        } else {
-            throw new Error("Oops! we're having trouble getting the weather information right now. Please try again later or contact our support.");
+        if (!response.ok) {
+            if (response.status === 404) {
+                throw new Error("Sorry, we couldn't find data. Please check your spelling and try again.");
+            } else {
+                throw new Error("Oops! we're having trouble getting the weather information right now. Please try again later or contact our support.");
+            }
         }
+
+        const weatherData = await response.json();
+
+        temperature.innerHTML = await convertRoundDegree(weatherData.main.temp - 273.15);
+        sky.innerHTML = await weatherData.weather[0].description;
+        currentLocation.innerHTML = await weatherData.name;
+        currentDate.innerHTML = await changeDateFormat(weatherData.dt);
+
+        windSpeed.innerHTML = await convertMpsToKmh(weatherData.wind.speed);
+        pressure.innerHTML = `${weatherData.main.pressure} HPA`;
+        sunrise.innerHTML = await changeDateFormat(weatherData.sys.sunrise, "hour");
+        sunset.innerHTML = await changeDateFormat(weatherData.sys.sunset, "hour");
+        humidity.innerHTML = `${weatherData.main.humidity} %`;
+        visibility.innerHTML = await convertMetersToKm(weatherData.visibility);
+
+    }  catch (error) {
+        console.error(error.message);
     }
-
-    const weatherData = await response.json();
-
-    temperature.innerHTML = await convertRoundDegree(weatherData.main.temp);
-    sky.innerHTML = await weatherData.weather[0].description;
-    currentLocation.innerHTML = await weatherData.name;
-    currentDate.innerHTML = await changeDateFormat(weatherData.dt);
-
-    windSpeed.innerHTML = await convertMpsToKmh(weatherData.wind.speed);
-    pressure.innerHTML = `${weatherData.main.pressure} HPA`;
-    sunrise.innerHTML = await changeDateFormat(weatherData.sys.sunrise, "hour");
-    sunset.innerHTML = await changeDateFormat(weatherData.sys.sunset, "hour");
-    humidity.innerHTML = `${weatherData.main.humidity} %`;
-    visibility.innerHTML = await convertMetersToKm(weatherData.visibility);
 };
 
 const convertMetersToKm = async (meters) => {
@@ -99,8 +104,3 @@ const changeDateFormat = async (unixTimeStamp, type) => {
     return formattedDate;
   }
 }
-
-searchButton.addEventListener("click", (evt) => {
-    evt.preventDefault();
-    fetchCurrentWeatherData();
-})
