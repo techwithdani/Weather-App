@@ -1,3 +1,6 @@
+let Url = "https://api.openweathermap.org/data/2.5/weather?";
+const ApiKey = "86960b2a6adfa182188e00404e6d2fce";
+
 const cityName = document.querySelector("#city-name");
 const searchButton = document.querySelector(".search-button");
 const temperature = document.querySelector("#temp");
