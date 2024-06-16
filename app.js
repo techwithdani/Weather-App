@@ -1,3 +1,4 @@
+// Base URL
 let Url = "https://api.openweathermap.org/data/2.5/weather?";
 
 // replace 'key' with your actual API key
@@ -36,8 +37,8 @@ const fetchCurrentWeatherData = async () => {
 
         // Updating DOM elements with weather data
         temperature.innerHTML = await convertRoundDegree(weatherData.main.temp - 273.15);
-        sky.innerHTML = await weatherData.weather[0].description;
-        currentLocation.innerHTML = await weatherData.name;
+        sky.innerHTML = weatherData.weather[0].description;
+        currentLocation.innerHTML = weatherData.name;
         currentDate.innerHTML = await changeDateFormat(weatherData.dt);
 
         windSpeed.innerHTML = await convertMpsToKmh(weatherData.wind.speed);
@@ -113,4 +114,6 @@ const changeDateFormat = async (unixTimeStamp, type) => {
 };
 
 // Event listener for search button click
-searchButton.addEventListener("click", fetchCurrentWeatherData);
+searchButton.addEventListener("click", () => {
+    fetchCurrentWeatherData();
+});
