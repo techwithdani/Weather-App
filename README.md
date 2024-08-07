@@ -2,8 +2,6 @@
 
 This project is a simple weather application that fetches and displays weather data from the OpenWeather API. The user can enter a city name and retrieve current weather information, including temperature, sky conditions, wind speed, pressure, sunrise and sunset times, humidity, and visibility.
 
-![screenshot](Images/WeatherAppScreenshot.png)
-
 ## Features
 
 1. Fetch current weather data for a specified city.
